@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Accessibility Quiz</title>
+</head>
+<body>
+
+	<!-- used to introduce the page, as well as provide a navigation menu. -->
+
+	<header>
+		<img id="logo" alt="freeCodeCamp" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
+		<h1>HTML/CSS Quiz</h1>
+		<nav>
+			<ul>
+				<li><a href="#student-info"  accesskey="i">INFO</a></li>
+				<li><a href="#html-questions"  accesskey="h">HTML</a></li>
+				<li><a href="#css-questions"  accesskey="c">CSS</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- contains the core content of your page -->
+
+	<main>
+		<form action="https://freecodecamp.org/practice-project/accessibility-quiz" method="POST">
+
+			<!-- Every region role requires a label, which helps screen reader users understand the purpose of the region. One method for adding a label is to add a heading element inside the region and then reference it with the aria-labelledby attribute. -->
+
+			<section aria-labelledby="student-info" role="region">
+				<h2 id="student-info">Student Info</h2>
+				<div class="info">
+					<label for="student-name">Name: </label>
+					<input type="text" name="student-name" id="student-name"  >
+				</div>
+				<div class="info">
+					<label for="student-email">Email: </label>
+					<input type="email" name="student-email" id="student-email">
+				</div>
+				<div class="info">
+					<label for="birth-date">Date of birth: </label>
+					<input type="date" name="birth-date" id="birth-date">
+				</div>
+			</section>
+			<section aria-labelledby="html-questions" role="region">
+				<h2 id="html-questions">HTML Questions</h2>
+				<div class="question-block">
+
+					<!-- Span element with a class of sr-only, when hidden with CSS, adds text only a screen reader can read. -->
+
+					<h3><span class="sr-only">Question</span>1</h3>
+					<fieldset class="question" name="html-question-one">
+						<legend>The legend element represents a caption for the content of its parent fieldset element</legend>
+						<ul class="answers-list">
+							<li>
+								<label for="q1-a1">
+									<input value="True" name="fieldset-one" type="radio" id="q1-a1">
+									True
+								</label>
+							</li>
+							<li>
+								<label for="q1-a2">
+									<input value="False" name="fieldset-one" type="radio" id="q1-a2">
+									False
+								</label>
+							</li>
+						  </ul>
+					</fieldset>
+				</div>
+				<div class="question-block">
+					<h3><span class="sr-only">Question</span>2</h3>
+					<fieldset class="question" name="html-question-two">
+						<legend>A label element nesting an input element is required to have a for attribute with the same value as the input's id</legend>
+						<ul class="answers-list">
+							<li>
+								<label for="q2-a1">
+									<input value="True" name="fieldset-two" type="radio" id="q2-a1">
+									True
+								</label>
+								</li>
+							<li>
+								<label for="q2-a2">
+									<input value="False" name="fieldset-two" type="radio" id="q2-a2">
+									False
+								</label>
+							</li>
+						  </ul>
+					</fieldset>
+				</div>			
+			</section>
+			<section aria-labelledby="css-questions" role="region">
+				<h2 id="css-questions">CSS Questions</h2>
+				<div class="formrow">
+					<div class="question-block">
+						<label for="selector">
+							Can the CSS margin property accept negative values?
+						</label>
+					</div>
+					<div class="answer">
+						<select required name="selector" id="selector">
+							<option value="">Select an option</option>
+							<option value="yes">Yes</option>
+							<option value="noss">No</option>
+						</select>
+					</div>
+					<div class="question-block">
+						<label for="css-textarea">Do you have any questions:</label>
+					</div>
+					<div class="answer">
+						<textarea name="css-textarea" id="css-textarea" rows="10" cols="60"></textarea>
+					</div>
+				</div>
+			</section>
+			<button type="submit">Send</button>
+		</form>
+	</main>
+
+	<!-- container for a collection of content that is related to the page -->
+
+	<footer>
+
+		<!-- container for contact information for the author of the page -->
+
+		<address>
+			<a href="https://github.com/moorcode">moorcode</a><br>
+			Phoenix<br>
+			Arizona<br>
+			USA
+		</address>
+	</footer>
+</body>
+</html>
