@@ -1,5 +1,5 @@
 # accessibility-quiz
-Build a quiz webpage to learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices.
+Here I build a quiz webpage to learn accessibility tools such as __keyboard shortcuts__, __ARIA attributes__, and __design best practices__.
 
 ## Notes on Accessibilty
 
